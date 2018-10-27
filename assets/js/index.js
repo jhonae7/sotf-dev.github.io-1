@@ -4,6 +4,7 @@
   const validate_form = document.getElementById('validate-form')
   const icon = document.querySelector('#add-contact i')
   const btn_add = document.getElementById('add-contact')
+  const btn_cancel = document.getElementById('cancel-contact')
   const contact_list = document.getElementById('contact-list')
 
   //Form variables
@@ -27,11 +28,17 @@
         validate_form.classList.add('d-none')
         hideFormView()
         // add code create contact
-
       } else {
         validate_form.classList.remove('d-none')
       }
     }
+  })
+
+  /*
+   * Cancel Contact
+   */
+  btn_cancel.addEventListener('click', () => {
+    hideFormView()
   })
 
   /*
@@ -58,6 +65,7 @@
     icon.classList.add('fa-check')
     btn_add.classList.remove('btn-primary')
     btn_add.classList.add('btn-success')
+    btn_cancel.classList.remove('d-none')
     contact_list.classList.add('d-none')
   }
 
@@ -68,6 +76,7 @@
     icon.classList.add('fa-plus')
     btn_add.classList.remove('btn-success')
     btn_add.classList.add('btn-primary')
+    btn_cancel.classList.add('d-none')
     contact_list.classList.remove('d-none')
   }
 })()
