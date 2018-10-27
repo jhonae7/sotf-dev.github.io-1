@@ -6,7 +6,7 @@
     .then(response => response.json())
     .then((json) => {
         for (let i = 0; i < json.length; i++) {
-          markupContact(json[i].name, json[i].last_name, json[i].email, json[i].city, json[i].address, json[i].phone)
+          markupContact(json[i].first_name, json[i].last_name, json[i].email, json[i].city, json[i].address, json[i].phone)
         }
       }
     )
