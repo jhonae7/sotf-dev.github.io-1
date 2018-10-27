@@ -4,6 +4,7 @@
   const validate_form = document.getElementById('validate-form')
   const icon = document.querySelector('#add-contact i')
   const btn_add = document.getElementById('add-contact')
+  const contact_list = document.getElementById('contact-list')
 
   //Form variables
   const first_name = document.getElementById('first_name');
@@ -57,6 +58,7 @@
     icon.classList.add('fa-check')
     btn_add.classList.remove('btn-primary')
     btn_add.classList.add('btn-success')
+    contact_list.classList.add('d-none')
   }
 
   const hideFormView = () => {
@@ -66,6 +68,7 @@
     icon.classList.add('fa-plus')
     btn_add.classList.remove('btn-success')
     btn_add.classList.add('btn-primary')
+    contact_list.classList.remove('d-none')
   }
 })()
 
