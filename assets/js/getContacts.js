@@ -15,9 +15,11 @@
     const markup = '<div class="col-md-6 mt-2">' +
       '<div class="card">' +
       '<div class="card-body">' +
-      '<h5 class="card-title font-weight-bold text-center">' + first_name + ' ' + last_name + '</h5>' +
-      '<h6 class="card-subtitle mb-2 text-muted text-center">' + phone + '</h6>' +
-      '<p class="card-text text-center">' + address + '</p>' +
+      '<h5 class="card-title font-weight-bold text-center name">' + first_name + ' ' + last_name + '</h5>' +
+      '<h6 class="card-subtitle font-weight-bold mb-3 text-muted text-center"><i class="fas fa-phone"></i> ' + phone + '</h6>' +
+      '<h6 class="card-subtitle mb-2 text-primary text-center font-weight-bold"><i class="fas fa-envelope-open-text"></i> ' + email + '</h6>' +
+      '<h6 class="card-subtitle mb-2 text-muted text-center"><i class="fas fa-map-marker-alt"></i> ' + city + '</h6>' +
+      '<p class="card-text text-center mt-4"><i class="fas fa-map-marked-alt"></i> ' + address + '</p>' +
       '<a href="#" class="card-link d-flex justify-content-center">Editar</a>' +
       '</div>' +
       '</div>' +

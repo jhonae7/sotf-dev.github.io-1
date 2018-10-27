@@ -1,18 +1,18 @@
 [
   {
-    "name": "Luis",
+    "first_name": "Luis",
     "last_name": "Solorzano",
     "phone": "55025936",
     "email": "luisnic20@gmail.com",
-    "location": "León",
+    "city": "León",
     "address": "León, Telica"
   },
   {
-    "name": "Jhonatan",
+    "first_name": "Jhonatan",
     "last_name": "Espinoza",
     "phone": "82516897",
-    "email": "jhonatan.espinoza15@est.unanleon.edu.ni",
-    "location": "León",
+    "email": "jhonatan.espinoza15@gmail.com",
+    "city": "León",
     "address": "León, Barrio el calvario"
   }
 ]
