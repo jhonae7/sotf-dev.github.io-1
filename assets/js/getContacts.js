@@ -2,7 +2,7 @@
   const contacts_uri = 'https://raw.githubusercontent.com/sotf-dev/web-app/dev/assets/contacts.json'
   const contact_list = document.getElementById('contact-list')
 
-  window.fetch(`${ contacts_uri }`, {method: 'GET', mode: 'cors',})
+  window.fetch(`${ contacts_uri }`, {method: 'GET', mode: 'cors'})
     .then(response => response.json())
     .then((json) => {
         for (let i = 0; i < json.length; i++) {
@@ -12,7 +12,7 @@
     )
 
   const markupContact = (first_name, last_name, email, city, address, phone) => {
-    const markup = '<div class="col-md-6 mt-2">' +
+    const markup = '<div class="col-md-6 mt-3">' +
       '<div class="card shadow">' +
       '<div class="card-body">' +
       '<h5 class="card-title font-weight-bold text-center name">' + first_name + ' ' + last_name + '</h5>' +
