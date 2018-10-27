@@ -50,7 +50,7 @@
           </div>
           <div class="form-group col-md-4">
             <label for="phone" class="font-weight-bold">N# de Tel&eacute;fono</label>
-            <input type="tel" class="form-control" id="phone" placeholder="5555-4444">
+            <input type="tel" class="form-control" id="phone" maxlength="8" placeholder="5555-4444">
           </div>
         </div>
 
@@ -60,7 +60,11 @@
     </div>
   </div>
 
-  <button class="btn btn-primary add-contact" id="add-contact">
+  <a class="btn btn-danger cancel-contact d-none" id="cancel-contact" title="Cancelar">
+    <i class="fas fa-times fa-lg"></i>
+  </a>
+
+  <button class="btn btn-primary add-contact" id="add-contact" title="Agregar Contacto">
     <i class="fas fa-plus fa-2x"></i>
   </button>
 </div>
