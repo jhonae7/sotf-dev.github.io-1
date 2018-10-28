@@ -54,6 +54,7 @@
         hideFormView()
         clearForm()
         query_update()
+        query_delete()
       } else {
         validate_form.classList.remove('d-none')
       }
@@ -75,6 +76,7 @@
         createContact(first_name.value, last_name.value, email.value, city.value, address.value, phone.value, position)
         hideFormView()
         query_update()
+        query_delete()
       } else {
         validate_form.classList.remove('d-none')
       }
@@ -122,13 +124,45 @@
             showFormView()
           })
         })
-        console.log('true')
         clearInterval(time_update)
       }
-      console.log('false')
     }, 1000)
   }
   query_update()
+
+  /**
+   * DELETE Contact *************************************************************************************
+   */
+  const query_delete = () => {
+    let time_update = setInterval(() => {
+      const btn_delete = document.querySelectorAll('a.delete-contact')
+      if (btn_delete.length) {
+        btn_delete.forEach((value) => {
+          value.addEventListener('click', (e) => {
+            contactDOM.splice(e.target.id, 1)
+            contact_list.innerHTML = ''
+
+            for (let i = 0; i < contactDOM.length; i++) {
+              createContact(
+                contactDOM[i].first_name,
+                contactDOM[i].last_name,
+                contactDOM[i].email,
+                contactDOM[i].city,
+                contactDOM[i].address,
+                contactDOM[i].phone,
+                i
+              )
+            }
+
+            query_update()
+            query_delete()
+          })
+        })
+        clearInterval(time_update)
+      }
+    }, 1000)
+  }
+  query_delete()
 
   /**
    * Array Push Contacts *************************************************************************************
@@ -207,7 +241,9 @@
       '<h6 class="card-subtitle mb-2 text-primary text-center font-weight-bold"><i class="fas fa-envelope-open-text"></i> ' + email + '</h6>' +
       '<h6 class="card-subtitle mb-2 text-muted text-center font-weight-bold "><i class="fas fa-map-marker-alt"></i> ' + city + '</h6>' +
       '<p class="card-text text-center mt-4"><i class="fas fa-map-marked-alt"></i> ' + address + '</p>' +
-      '<a href="#" class="card-link d-flex justify-content-center edit-contact" id="' + position + '">Editar</a>' +
+      '<hr/>' +
+      '<a href="#" class="card-link edit-contact font-weight-bold" id="' + position + '"><i class="fas fa-edit"></i> Editar</a>' +
+      '<a href="#" class="card-link delete-contact font-weight-bold" id="' + position + '"><i class="fas fa-trash"></i> Eliminar</a>' +
       '</div>' +
       '</div>' +
       '</div>'
